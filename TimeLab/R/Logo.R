@@ -13,7 +13,8 @@
 #        },pw=pw,us=us))
 #save(DAT,file="/home/triffe/workspace/TimeLab/Data/HMDall.Rdata")
 # or simply load FRATNP fltper_1x1 and select lx from 1875...
-DAT     <- local(get(load("/home/triffe/workspace/TimeLab/Data/HMDall.Rdata")))
+setwd("/home/triffe/git/TimeProposal/TimeLab")
+DAT     <- local(get(load("Data/HMDall.Rdata")))
 library(reshape2)
 
 lx      <- acast(DAT, Age ~ Year + Sex + Code, value.var = "lx")
@@ -32,7 +33,7 @@ mai     <- rep(.03, 4) # narrow borders
 height  <- 2 + mai[1] * 2
 width   <- 1 + mai[1] * 2
 #dev.new(height=height,width=width)
-pdf("/home/triffe/workspace/TimeLab/Figures/logo.pdf", height = height, width = width)
+pdf("Figures/logo.pdf", height = height, width = width)
 par(xaxs = "i", yaxs = "i", mai = mai, xpd = TRUE)
 x <- seq(0, 2, length = 111)
 # open empty device 
