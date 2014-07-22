@@ -5,6 +5,9 @@
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage{array,booktabs}
+\usepackage{caption}
+%\usepackage{tabu}
 \pagestyle{fancy}
 \lhead{\includegraphics[width=1cm]{Figures/logo}}
 \setlength\headheight{40pt} 
@@ -16,7 +19,7 @@
 \textbf{
 \makebox[0pt][l]{\includegraphics[width=1.5cm]{Figures/logo}}
 \hfill
-\Huge{Time} \huge{and} \Huge{Population} \hfill\hfill 
+\Huge{Age} \huge{and} \Huge{Time} \hfill\hfill 
 } \\ ~ \\~ \\~ \\ \huge{Proposal for Research Group}}
 \author{Timothy L. M. Riffe}
 \maketitle
@@ -24,12 +27,11 @@
 \onehalfspacing
 
 \section{Introduction}
-I propose to build and lead a research group that will do fundamental
-demography. This group will advance the tools of mathematical demography and
-tweak the tools of practical demography to allow for the discovery and description of empirical regularities
-within human populations that have thus far largely gone unnoticed and
-undescribed. Such progress is possible due to a seldom-considered realignment of
-the age axis in population models.
+I propose to build and lead a research group that will advance fundamental
+demography by expanding research based on a seldom-considered realignment of
+the age axis in population models. This group will advance the tools of
+mathematical demography and tweak the tools of practical demography to allow for
+the discovery and description of empirical regularities within human populations that have thus far largely gone unnoticed and undescribed.
 
 \subsection*{Age axis}
 A particular notion of age is pervasive in the social and medical sciences, that
@@ -52,7 +54,7 @@ Figure~\ref{fig:line}).
 Age in this case is a distance on the lifeline, measured either from birth (chronological age) or from death
 (thanatological age). The first is canonical age, pervasive in this and
 other disciplines, and the second is one point of departure for this research
-group, and underlies the title ``Time and Population''. This research group
+group, and underlies the title ``Age and Time'' (A\&T). This research group
 will chart the varied theoretical, methodological, and substantive
 implications of thanatological age, thereby contributing to the foundations of the discipline.
 
@@ -62,15 +64,15 @@ Age-classified models, such as those of population renewal or projections, are
 redefineable in terms of thanatological age. This was the topic of my
 dissertation and some subsequent work (either under review or in preparation).
 Some general results remain identical to models structured by chronological age (e.g., the growth rate under certain
-circumstances), while others are different (e.g., the hypothetical time to stability). One focus of the Time research group will be to expand and develop the continuous and discrete mathematics of
-these models to explain such results and therein round-out the existing
-foundation of population theory.
+circumstances), while others are different (e.g., the hypothetical time to
+stability). One focus of the A\&T research group will be to
+expand and develop the continuous and discrete mathematics of these models to explain such results and therein round-out the existing foundation of population theory.
 
 \subsection{Methodological work}
 Perhaps more relevant to the everyday practice of demography is the expectation
 of new measures, decomposition techniques and tools to aid in the measurement
 and understanding of population trends that result from the consideration of
-thanatological age. A second but equally exciting focus of the Time research
+thanatological age. A second but equally exciting focus of the A\&T research
 group is to develop and disseminate this varied suite of tools. A list of
 methods ripe for invention and/or refinement in this direction includes:
 
@@ -83,18 +85,21 @@ measure. In this way, each measure becomes a function of age, and a summary of
 the distribution of remaining years of life, which changes over age. The common
 lifetable column for remaining life expectancy already has this property, but many more are possible. A half-draft
 starting on this topic is currently in preparation with two coauthors.
-This work will be of use for late-life decision analytics (investments and insurance), but also for the optimization of age-benchmarked public policies.}
+This work will be of use for late-life decision analytics (investments and
+insurance), but also for the optimization of age-benchmarked public policies
+and lifetable-based indices of population ageing.}
 \item[Decomposition techniques]{Data classified by chronological age is
 decomposable into classes of remaining years of life. In the simplest case,
 this can yield a picture of the population structured by remaining years of life, but
 the same basic concept can be expanded to compare the cause-specific impacts of
 life-saving on population structure or the cumulative
 years of life saved. This is useful for assessing the raw impacts of causes of
-death on population stocks. A half-draft on the many temporal perspectives of life-saving is currently in prepration with a coauthor}
+death on population stocks. A half-draft on the many temporal perspectives of
+life-saving is currently in prepration with a coauthor.}
 \end{description}
 
 \subsection{Empirical work}
-A third focus of the Time research group will be to determine the classes of
+A third focus of A\&T will be to determine the classes of
 life transitions that exhibit strong empirical regularities as a function
 of remaining time and to describe these patterns. This work will largely consist
 in exploiting pre-existing panel datasets. Late life transitions are likely to
@@ -110,21 +115,38 @@ searching for explanations and mechanisms.
 
 \pagebreak
 \section{Work plan}
-The team work plan is to work hard and play hard. I would not have any
-good ideas without the playful interaction of data and models, and new ideas
-are the fountain of youth. The group focuses outlined above are diverse and
+The group focuses outlined above are diverse and
 ambitious, and so the team required to execute these must also be diverse and
 ambitious. I will find and gather a small group of enterprising, curiosity-driven and complementary individuals to undertake this work and contribute ideas and vision to the project. The assimilation of PhD students will be staggered over the first three years of the project, and a post doc will be sought out for early incorporation.
 
-I have already planted collaborative seeds in each of the three focus areas,
-with collaborators in five countries. Further, the continued
-support of my varied mentors and peers provides a an external force
-the success of this project. A clear ongoing obejective will be to build and
-reinforce this network to the benefit of the project and the team. 
+Work on all focus areas will be simultaneous throughout the project, but group
+emphasis will shift over the five years of the project. Work in years one
+through three will emphasize theoretical and mathematical foundations, as well
+as novel methodological work. Project effort will be invested in the second year
+to collect and catalogue data sources that allow for direct estimation of
+demographic phenomena as a function of remaining years. Years four and five will shift emphasis to the discovery and description of thanatological age patterns of varied demographic phenomena in different contexts.
 
+\begin{table}[h]
+\centering
+\caption*{Calendar of work emphasis}
+   \begin{tabular}{rll}
+ &
+\raisebox{-.25\height}{\includegraphics[scale=1]{Figures/Gantt/0_Years}}
+ & Project Years\\
+Math \& Theory &
+\raisebox{-.25\height}{\includegraphics[scale=1]{Figures/Gantt/1_Math}}&
+\\
+Methods &
+\raisebox{-.25\height}{\includegraphics[scale=1]{Figures/Gantt/1_Methods}}&
+\\
+Data & \raisebox{-.25\height}{\includegraphics[scale=1]{Figures/Gantt/2_Data}}&
+\\
+Empirics &
+\raisebox{-.25\height}{\includegraphics[scale=1]{Figures/Gantt/3_Empirical}}& \\
+   \end{tabular}
+\end{table}
 
-
-
-
+Finally, all published work, derived results and code pertaining to
+methodological advancements will be strictly open access.
 
 \end{document}
