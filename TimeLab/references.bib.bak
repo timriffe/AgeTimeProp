@@ -1,0 +1,123 @@
+% This file was created with JabRef 2.7b.
+% Encoding: UTF-8
+
+@BOOK{brouard1989mouvements,
+  title = {Mouvements et mod{\`e}les de population},
+  publisher = {Institut de formation et de recherche d{\'e}mographiques},
+  year = {1989},
+  author = {Brouard, Nicolas},
+  owner = {triffe},
+  timestamp = {2014.06.04}
+}
+
+@ARTICLE{brouard1986structure,
+  author = {Brouard, Nicolas},
+  title = {Structure et dynamique des populations. La pyramide des ann{\'e}es
+	{\`a} vivre, aspects nationaux et exemples r{\'e}gionaux},
+  journal = {Espace, populations, soci{\'e}t{\'e}s},
+  year = {1986},
+  volume = {4},
+  pages = {157--168},
+  number = {2},
+  owner = {triffe},
+  publisher = {Universit{\'e} des Sciences et Technologies de Lille},
+  timestamp = {2014.06.04}
+}
+
+@PHDTHESIS{riffe2013two,
+  author = {Riffe, Timothy LM},
+  title = {The Two-Sex Problem in Populations Structured by Remaining Years
+	of Life},
+  school = {Universitat Aut\`{o}noma de Barcelona},
+  year = {2013},
+  owner = {triffe},
+  publisher = {Universitat Aut{\`o}noma de Barcelona},
+  timestamp = {2013.09.24}
+}
+
+@ARTICLE{sanderson2007new,
+  author = {Sanderson, Warren and Scherbov, Sergei},
+  title = {A new perspective on population aging},
+  journal = {Demographic research},
+  year = {2007},
+  volume = {16},
+  pages = {27--58},
+  number = {2},
+  owner = {triffe},
+  publisher = {Max Planck Institute for Demographic Research, Rostock, Germany},
+  timestamp = {2013.11.01}
+}
+
+@ARTICLE{sanderson2010remeasuring,
+  author = {Sanderson, Warren C and Scherbov, Sergei},
+  title = {Remeasuring aging},
+  journal = {Science(Washington)},
+  year = {2010},
+  volume = {329},
+  pages = {1287--1288},
+  number = {5997},
+  owner = {triffe},
+  publisher = {American Association for the Advancement of Science, 1200 New York
+	Avenue, NW Washington DC 20005 USA},
+  timestamp = {2013.11.01}
+}
+
+@ARTICLE{sanderson2005average,
+  author = {Sanderson, Warren C and Scherbov, Sergei},
+  title = {Average remaining lifetimes can increase as human populations age},
+  journal = {Nature},
+  year = {2005},
+  volume = {435},
+  pages = {811--813},
+  number = {7043},
+  owner = {triffe},
+  publisher = {Nature Publishing Group},
+  timestamp = {2013.11.01}
+}
+
+@ARTICLE{vaupel2009life,
+  author = {Vaupel, James W},
+  title = {Life lived and left: Carey's equality},
+  journal = {Demographic Research},
+  year = {2009},
+  volume = {20},
+  pages = {7--10},
+  number = {3},
+  owner = {triffe},
+  publisher = {Max Planck Institute for Demographic Research, Rostock, Germany},
+  timestamp = {2013.02.22}
+}
+
+@INCOLLECTION{vaupel2008lifesaving,
+  author = {Vaupel, James W},
+  title = {Lifesaving, lifetimes and lifetables},
+  booktitle = {How Long Do We Live?},
+  publisher = {Springer},
+  year = {2008},
+  pages = {93--107},
+  owner = {triffe},
+  timestamp = {2014.07.22}
+}
+
+@ARTICLE{vaupel1987repeated,
+  author = {Vaupel, James W and Yashin, Anatoli I},
+  title = {Repeated resuscitation: How lifesaving alters life tables},
+  journal = {Demography},
+  year = {1987},
+  volume = {24},
+  pages = {123--135},
+  number = {1},
+  owner = {triffe},
+  publisher = {Springer},
+  timestamp = {2014.07.22}
+}
+
+@BOOK{wachter2014essential,
+  title = {Essential demographic methods},
+  publisher = {Harvard University Press},
+  year = {2014},
+  author = {Wachter, Kenneth W},
+  owner = {triffe},
+  timestamp = {2014.07.23}
+}
+

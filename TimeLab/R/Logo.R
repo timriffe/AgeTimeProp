@@ -1,4 +1,4 @@
-
+setwd("/home/triffe/git/TimeProposal/TimeLab")
 # prelim step: all HMD data from web
 #library(DemogBerkeley)
 #countries <- getHMDcountries()
@@ -11,9 +11,9 @@
 #            DATi$Code <- xyz
 #            DATi
 #        },pw=pw,us=us))
-#save(DAT,file="/home/triffe/workspace/TimeLab/Data/HMDall.Rdata")
+#save(DAT,file="Data/HMDall.Rdata")
 # or simply load FRATNP fltper_1x1 and select lx from 1875...
-setwd("/home/triffe/git/TimeProposal/TimeLab")
+
 DAT     <- local(get(load("Data/HMDall.Rdata")))
 library(reshape2)
 
