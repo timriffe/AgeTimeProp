@@ -1,14 +1,14 @@
 #TeXlipse project settings
-#Thu Jul 17 09:44:27 CEST 2014
+#Thu Jul 24 18:03:37 CEST 2014
 markTmpDer=true
 builderNum=2
-outputDir=
+outputDir=CoverLetter/
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=tmp
-mainTexFile=RiffeProposal.tex
-outputFile=RiffeProposal.pdf
+mainTexFile=Riffe_Cover.tex
+outputFile=Riffe_Cover.pdf
 langSpell=en
 markDer=true
-srcDir=
+srcDir=CoverLetter/

@@ -1,42 +1,77 @@
-system('cd /home/triffe/git/ThanoRepro/ThanoRepro/CoverLetter | pdflatex
-Riffe_Cover.tex')
 
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass[a4paper,12pt]{article}
-\usepackage[top=2cm, bottom=3cm, left=2.7cm, right=2.7cm]{geometry}
-\usepackage{setspace}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage{array,booktabs}
-\usepackage{caption}
-%\usepackage{tabu}
-\pagestyle{fancy}
-\lhead{\includegraphics[width=.7cm]{Figures/logo}}
-\setlength\headheight{25pt} 
+\documentclass[10pt,dateno,sigleft]{newlfm} 
+
+\usepackage[papersize={210mm, 297mm}]{geometry}
+
+\newsavebox{\Luiuc}\sbox{\Luiuc}{\parbox[b]{1.75in}{\vspace{0.5in}
+\includegraphics[width=.7cm]{Figures/logo}}\large{Cover Letter to \textit{Age \&
+Time} Research Group Proposal}}
+\makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
+
+\newlfmP{sigsize=50pt}
+\newlfmP{addrfromphone} 
+\newlfmP{addrfromemail}
+\PhrPhone{Tel} 
+\PhrEmail{Email}
+
+\lthUiuc 
+
+\namefrom{Tim Riffe}
+\addrfrom{
+\today\\[12pt] 
+2232 Piedmont Ave \\
+University of California, Berkeley \\
+Berkeley, CA 94720-2120 \\
+USA
+}
+\phonefrom{\texttt{+}1(510)414-8132} 
+\emailfrom{triffe@demog.berkeley.edu}
+\greetto{Dear members of the selection committee,} 
+\closeline{Best wishes,} 
+\nameto{Dr. James Vaupel} 
+\addrto{
+Max Planck Institute for Demographic Rsearch \\ % To address
+Konrad-Zuse-Stra{\ss}e 1 \\
+18057 Rostock, Germany \\
+}
+
+%----------------------------------------------------------------------------------------
 
 \begin{document}
+\begin{newlfm}
 
-\title{\vspace{-15mm}
-\fontsize{25pt}{10pt}\selectfont
-\textbf{
-\makebox[0pt][l]{\includegraphics[width=.7cm]{Figures/logo}}
-\hfill
-\Huge{Age} \huge{and} \Huge{Time} \hfill\hfill 
-} \\ ~ \\~ \\~ \\ \huge{Proposal for Research Group}}
-\author{Timothy L. M. Riffe}
-\maketitle
+I am pleased to submit a proposal to form and lead the ``Age and Time'' research
+group. I decided to apply based upon the steady encouragement of demographer
+friends.
+Had I not received such encouragement, I probably would not have applied due to self-selection on the basis of having few publications,
+likely the lowest of any applicant. I'm still in the middle of harvesting my
+dissertation and my current position at the Human Mortality Database has a small
+research component.
+Instead I apply on the basis of \textit{promise}, and I demonstrate this promise with
+the merits of the proposal itself, my novel dissertation, a selection of
+appended articles either under review or in draft form, and the good word of my
+peers and and formal references.
 
-Dear selection committee,
+Some committee members know me already. The following people also know me well
+and are my formal references:
 
-I am pleased to submit a proposal for the ``Age and Time'' research group, and I
-am sure you will find its content compelling. Some committee members know me and
-others do not. 
+\begin{center}
+\begin{tabular}{l l l}
+Joshua Goldstein & \small{Demography Chair, UC Berkeley} &
+josh@demog.berkeley.edu
+\\
+Albert Esteve & \small{Vice director, Centre for Demographic Studies}, Barcelona
+& aesteve@ced.uab.es\\
+John Wilmoth & \small{Director, United Nations Population Division} &
+wilmoth@un.org\\
+Vladimir Canudas Romo & \small{Assoc. Professor, University of Southern Denmark}
+& vcanudas@health.sdu.dk
+\end{tabular}
+\end{center}
 
+As you will see from the proposal document, the scientific prospects of this
+project are exciting and diverse. Fund this project and I will build a team and
+deliver. Thank you for considering my proposal and I hope to see you soon.
 
-
+\end{newlfm}
 \end{document}
-
-
-
-
