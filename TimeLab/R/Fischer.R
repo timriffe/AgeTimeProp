@@ -98,15 +98,18 @@ Av <- Re(eigen(A,symmetric=FALSE)$vectors)
 Yv <- Re(eigen(Y,symmetric=FALSE)$vectors)
 
 graphics.off()
-par(mfrow=c(1,2))
-matplot(0:110,Av,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
+png("Figures/Eigens.png",width=900,height=450)
+par(mfrow=c(1,2), mai = c(.5,.5,.5,.5))
+matplot(0:110,Av,type='l',lty=1,col = "#00000020",ylim=c(-1,1), main = "chronological age")
 lines(0:110,abs(Av[,1]),col="red")
-matplot(0:110,Yv,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
+matplot(0:110,Yv,type='l',lty=1,col = "#00000020",ylim=c(-1,1), main = "thanatological age")
 lines(0:110,abs(Yv[,1]),col="red")
-
+dev.off()
 EA <- eigen.analysis(A)
 EY <- eigen.analysis(Y)
 
+# this is necessary because solve(eigen(A)$vectors)) returns singularity error
+# eigen.analysis frequently won't work for these particular Leslie matrices
 getRv <- function(A,leslie=TRUE){
     v1 <- eigen( t(A) )$vectors[,1]
     if (leslie){
@@ -118,11 +121,12 @@ divst <- function(x){
     x/sd(x)
 }
 # the usual normalization
-plot(0:110,divst(getRv(A)),type="l", ylim=c(0,3))
-lines(0:110,divst(getRv(Y,FALSE)), col = "green")
+#plot(0:110,divst(getRv(A)),type="l", ylim=c(0,3))
+#lines(0:110,divst(getRv(Y,FALSE)), col = "green")
+#
+## stuff to add, out of curiosity
+#abline(v = sum(.5:110.5*dx),col="red")
+#abline(v=which.max(dx)-.5,col="red",lty=2)
+#lines(0:110,divst(Fx),col = "blue")
+#lines(0:110,divst(dx),col = "magenta")
 
-# stuff to add, out of curiosity
-abline(v = sum(.5:110.5*dx),col="red")
-abline(v=which.max(dx)-.5,col="red",lty=2)
-lines(0:110,divst(Fx),col = "blue")
-lines(0:110,divst(dx),col = "magenta")
