@@ -47,3 +47,6 @@ polygon(c(lxp, 1 - lxp), c(x, rev(x)), border = border, lwd = 2, col = gray(.9))
 polygon(c(0, 1, 1), c(0, 0, 1), border = border, lwd = 2)
 polygon(c(0, 1, 0), c(1, 2, 2), border = border, lwd = 2)
 dev.off()
+
+
+system('cd /home/triffe/git/ThanoRepro/ThanoRepro/CoverLetter | pdflatex Riffe_Cover.tex')
