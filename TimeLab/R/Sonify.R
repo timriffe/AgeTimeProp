@@ -5,8 +5,13 @@
 # change this as needed:
 setwd("/home/triffe/git/TimeProposal/TimeLab")
 
+library(compiler)
 # -----------------------------------------------------
 # Utility functions.
+st <- function(x,tot = 1){
+    (x / sum(x, na.rm = TRUE)) * tot
+}
+
 Mna0 <- cmpfun(function(M){
             M[is.na(M)]  <- 0
             M[is.nan(M)] <- 0
@@ -214,4 +219,30 @@ matplot(0:110,Av,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
 dev.off()
 png("Figures/Yv.png")
 matplot(0:110,Yv,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
+dev.off()
+
+# --------------------------------------------------------------------
+# Edit: 7/25 re: Carl Boe's comment:
+# Higher order eigenvectors receive undue emphasis because each is presented
+# so that || u ||^2  =1   What would the plots look like if instead of
+# showing u_i(x) you showed C_i u_i(x) where
+# C_i = modulus( Lambda_i)/ modulus(Lambda_0) ?
+eA <- eigen(A,symmetric=FALSE)
+eY <- eigen(Y,symmetric=FALSE)
+Ascalers <- Re(eA$values) / Re(eA$values)[1]
+Yscalers <- Re(eY$values) / Re(eY$values)[1]
+Av2 <- t(t(Re(eA$vectors)) * Ascalers)
+Yv2 <- t(t(Re(eY$vectors)) * Yscalers)
+
+par(mfrow=c(2,2))
+matplot(0:110,Av,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
+matplot(0:110,Yv,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
+matplot(0:110,Av2,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
+matplot(0:110,Yv2,type='l',lty=1,col = "#00000020",ylim=c(-1,1))
+
+graphics.off()
+png("Figures/Eigens2.png",width=900,height=450)
+par(mfrow=c(1,2), mai = c(.5,.5,.5,.5))
+matplot(0:110,Av2,type='l',lty=1,col = "#00000020",ylim=c(-1,1), main = "chronological age")
+matplot(0:110,Yv2,type='l',lty=1,col = "#00000020",ylim=c(-1,1), main = "thanatological age")
 dev.off()
