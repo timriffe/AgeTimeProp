@@ -185,3 +185,68 @@ par(mfrow=c(1,2), mai = c(.5,.5,.5,.5))
 matplot(0:110,Av2,type='l',lty=1,col = "#00000020",ylim=c(-1,1), main = "chronological age")
 matplot(0:110,Yv2,type='l',lty=1,col = "#00000020",ylim=c(-1,1), main = "thanatological age")
 dev.off()
+
+
+rownames(Yv2) <- 0:110
+colnames(Yv2) <- 0:110
+rownames(Av2) <- 0:110
+colnames(Av2) <- 0:110
+YvDF2 <- melt(Yv2, varnames=c("y1","y2"),value.name="vec")
+AvDF2 <- melt(Av2, varnames=c("a1","a2"),value.name="vec")
+
+# sonification code. Plenty that could be done to tweak it, but it requires
+# either lots of trial and error or else someone who know their way around
+# a synthesizer/Csound
+Yson2 <- sonify(YvDF2[YvDF2$y2 < 10 & YvDF2$y1 < 60,], sonaes(time = y1, pitch = vec)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 12)) + sonfacet(y2)
+Ason2 <- sonify(AvDF2[AvDF2$a2 < 10 & AvDF2$a1 > 50,], sonaes(time = a1, pitch = vec)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 12)) + sonfacet(a2)
+
+# wave files on soundcloud, embedded in blog
+sonsave(Yson2, "Data/Yson2.wav")
+sonsave(Ason2, "Data/Ason2.wav")
+
+# what about inter-leaving age and thano?
+colnames(AvDF2) <- colnames(YvDF2) <- c("row","col","value")
+AvDF2$type <- "a"
+YvDF2$type <- "y"
+InterLeaved <- rbind(AvDF2,YvDF2)
+InterLeaved <- InterLeaved[order(InterLeaved$col,InterLeaved$type,InterLeaved$row),]
+ind <- with(InterLeaved, col < 10 & ((type == "a" & row > 50) | (type == "y" & row < 50)))
+sonify(InterLeaved[ind,], sonaes(time = row, pitch = value)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 12)) + sonfacet(col)
+
+sonify(InterLeaved[ind,], sonaes(time = row, pitch = value)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 7)) + sonfacet(col)
+
+dxdf <- data.frame(a=0:110,dx=dx)
+
+sonify(dxdf, sonaes(time = a, pitch = dx)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 10))
+
+# or comparing data?
+
+# SWE in 50-year jumps:
+sonify(HMD[HMD$Code == "SWE" & HMD$Year %% 50 == 0,], sonaes(time = Age, pitch = lx)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 8)) + sonfacet(Year)
+
+sonify(HMD[HMD$Code == "SWE" & HMD$Year %% 50 == 0,], sonaes(time = Age, pitch = st(dx))) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 8)) + sonfacet(Year)
+
+HMD$mxmod <- Minf0(log(HMD$mx))
+sonify(HMD[HMD$Code == "SWE" & HMD$Year %% 50 == 0,], sonaes(time = Age, pitch = mxmod)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(3, 8)) + sonfacet(Year)
+
+# all lx available in 1960 (need sensitive ears to catch outliers here)
+sonify(HMD[HMD$Year == 1960,], sonaes(time = Age, pitch = lx)) + shape_scatter() + 
+        scale_time_continuous(c(0, 2)) + scale_pitch_continuous(c(5, 9)) + sonfacet(Code)
+
+# two very different death distributions in Spain: you can hear choppiness as age heaping in the first.
+# the strong ping at the beginning is infant mortality, and the strong finish at the end is modern 
+# rectangularized mortality- note the smoother tone in the second half. Very cool
+sonify(HMD[HMD$Year %in% c(1930,2010) & HMD$Code == "ESP",], sonaes(time = Age, pitch = dx)) + shape_scatter() + 
+        scale_time_continuous(c(0, 5)) + scale_pitch_continuous(c(5, 12)) + sonfacet(Year)
+
+plot(HMD$dx[HMD$Year %in% c(1930,2010) & HMD$Code == "ESP"],type='l')
+
+
