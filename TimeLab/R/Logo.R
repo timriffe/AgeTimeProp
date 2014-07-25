@@ -1,19 +1,6 @@
 setwd("/home/triffe/git/TimeProposal/TimeLab")
-# prelim step: all HMD data from web
-#library(DemogBerkeley)
-#countries <- getHMDcountries()
-#DAT <- do.call(rbind, lapply(countries,function(xyz,pw,us){
-#            DATm    <- readHMDweb(xyz,"mltper_1x1",password=pw,username=us) 
-#            DATf    <- readHMDweb(xyz,"fltper_1x1",password=pw,username=us) 
-#            DATm$Sex <- "m"
-#            DATf$Sex <- "f"
-#            DATi <- rbind(DATf,DATm)
-#            DATi$Code <- xyz
-#            DATi
-#        },pw=pw,us=us))
-#save(DAT,file="Data/HMDall.Rdata")
-# or simply load FRATNP fltper_1x1 and select lx from 1875...
 
+# this object is produced by R/DataPrep.R ...
 DAT     <- local(get(load("Data/HMDall.Rdata")))
 library(reshape2)
 

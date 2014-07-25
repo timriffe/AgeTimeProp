@@ -81,68 +81,7 @@ Leslie <- function(Fx, Lx){
     Mna0(cbind(rbind(Fx, diag(Sx)), 0))
 }
 
-# get data from web. Uncomment below code, and only run it once. Saves three big data.frames
-# to a /Data/ folder in your working directory (you'll need to make that folder probably)
-# -------------------------------------------------------------------------------------------#
-# run only once, take a while due to HFD web structure and excessive parsing that is needed. #
-# -------------------------------------------------------------------------------------------#
-# HMD grabbing takes less time, but is slow due to size.                                     #
-# -------------------------------------------------------------------------------------------#
-# this code is way superfluous, as the example only uses data from 1950 US females, so skip  #
-# this and adapt if you don' want the whole fricking databases. Commented out because you    #
-# should only do it once!                                                                    #
-# -------------------------------------------------------------------------------------------#
-{
-#library(devtools)
-#install_github("DemogBerkeley", subdir = "DemogBerkeley", username = "UCBdemography")
-#library(DemogBerkeley)
-#library(reshape2)
-#countries <- getHFDcountries()
-#xyz <- countries[1]
-#DAT <- do.call(rbind, lapply(countries,function(xyz,pw,us){ 
-#            DAT    <- readHFDweb(xyz,"birthsRR",password=pw,username=us) 
-#            BM     <- acast(DAT,Age~Year,value.var="Total")
-#            YA     <- matrix(0,nrow=12,ncol=ncol(BM),dimnames=list(0:11,colnames(BM)))
-#            OA     <- matrix(0,nrow=55,ncol=ncol(BM),dimnames=list(56:110,colnames(BM)))
-#            BM     <- rbind(YA,BM,OA)
-#            DAT    <- melt(BM, varnames=c("Age","Year"),value.name="Births")
-#            DAT$Code <- xyz
-#            DAT
-#        },pw=pw,us=us))
-    ## save out for later use
-#save(DAT,file="Data/HFDall.Rdata")
-    
-# -------------------------------------------
-# now get HMD exposures (differ from HFD exposures sometimes)
-#library(DemogBerkeley)
-#countries <- getHMDcountries()
-#DAT <- do.call(rbind, lapply(countries,function(xyz,pw,us){
-#            DAT             <- readHMDweb(xyz,"Exposures_1x1",password=pw,username=us) 
-#            Fem             <- DAT[,c("Year","Age","Female")]
-#            Mal             <- DAT[,c("Year","Age","Male")]
-#            colnames(Fem)   <- colnames(Mal) <- c("Year","Age","Exp")
-#            Fem$Sex         <- "f"
-#            Mal$Sex         <- "m"
-#            DAT             <- rbind(Fem,Mal)
-#            DAT$Code        <- xyz
-#            DAT
-#        },pw=pw,us=us))
-#save(DAT,file="Data/HMDExpall.Rdata")
-# #and again for HMD lifetables (males grabbed superfluously)    
-#DAT <- do.call(rbind, lapply(countries,function(xyz,pw,us){
-#            DATm    <- readHMDweb(xyz,"mltper_1x1",password=pw,username=us) 
-#            DATf    <- readHMDweb(xyz,"fltper_1x1",password=pw,username=us) 
-#            DATm$Sex <- "m"
-#            DATf$Sex <- "f"
-#            DATi <- rbind(DATf,DATm)
-#            DATi$Code <- xyz
-#            DATi
-#        },pw=pw,us=us))
-#save(DAT,file="Data/HMDall.Rdata")
-}
-
-# assuming you have the above data.frames:
-# Read in largeish data objects
+# these data objects are all produced in R/DataPrep.R
 HMDE    <- local(get(load("Data/HMDExpall.Rdata")))
 HFD     <- local(get(load("Data/HFDall.Rdata")))
 HMD     <- local(get(load("Data/HMDall.Rdata"))) # produced in Logo.R
