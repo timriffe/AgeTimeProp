@@ -1,4 +1,4 @@
-setwd("/home/triffe/git/TimeProposal/TimeLab")
+setwd("/home/tim/git/AgeTimeProp/TimeLab")
 
 # this object is produced by R/DataPrep.R ...
 DAT     <- local(get(load("Data/HMDall.Rdata")))
@@ -36,4 +36,4 @@ polygon(c(0, 1, 0), c(1, 2, 2), border = border, lwd = 2)
 dev.off()
 
 
-system('cd /home/triffe/git/ThanoRepro/ThanoRepro/CoverLetter | pdflatex Riffe_Cover.tex')
+system('cd /home/tim/git/AgeTimeProp/TimeLab/CoverLetter | pdflatex Riffe_Cover.tex')

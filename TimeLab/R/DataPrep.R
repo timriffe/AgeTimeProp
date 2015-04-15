@@ -6,7 +6,7 @@
 # to have the whole thing in one chunk.
 
 # change as necessary
-setwd("/home/triffe/git/TimeProposal/TimeLab")
+setwd("/home/tim/git/AgeTimeProp/TimeLab")
 #library(devtools)
 #install_github("DemogBerkeley", subdir = "DemogBerkeley", username = "UCBdemography")
 library(DemogBerkeley)
